@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-cloudflare-monorepo-template",
+  "name": "chrome-extension-monorepo-template",
   "private": true,
   "packageManager": "pnpm@10.15.0",
   "description": "A production-ready Next.js 15 monorepo template with Cloudflare Workers deployment, TypeScript, Tailwind CSS, and Turborepo for fast development and edge deployment.",
@@ -20,10 +20,9 @@
     "pnpm": ">=9.6.0"
   },
   "scripts": {
-    "web:dev": "pnpm --filter web dev",
-    "web:build": "pnpm --filter web build",
+    "dev": "turbo run dev",
     "build": "turbo run build",
-    "tsc:watch": "tsc --noEmit --watch --project tsconfig.watch.json",
+    "tsc:watch": "pnpm exec tsc --noEmit --watch --project tsconfig.watch.json",
     "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
     "format:fix": "pnpm format --write",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache && pnpm lint:root",
@@ -38,7 +37,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage --config tooling/vitest/index.js",
     "prepare": "husky",
-    "clean:workspaces": "turbo run clean",
+    "clean:workspaces": "turbo run clean:all && git clean -xdf .cache .turbo",
     "clean:workspaces:install": "pnpm clean:workspaces && pnpm install",
     "deps:update": "npx taze -r -w && pnpm install",
     "deps:update:major": "npx taze major -r -w && pnpm install",
@@ -48,8 +47,11 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@internal/prettier-config": "workspace:*",
+    "@pixpilot/dev-config": "catalog:dev",
     "@pixpilot/workspace-package-generator": "^1.1.1",
+    "@testing-library/jest-dom": "catalog:dev",
     "@turbo/gen": "^2.5.6",
+    "@types/chrome": "catalog:dev",
     "@vitest/coverage-v8": "catalog:dev",
     "@vitest/ui": "catalog:dev",
     "husky": "^9.1.7",
@@ -58,6 +60,7 @@
     "tsx": "^4.20.4",
     "turbo": "^2.5.6",
     "typescript": "catalog:dev",
+    "typescript-eslint": "catalog:dev",
     "vitest": "catalog:dev"
   },
   "prettier": "@internal/prettier-config"

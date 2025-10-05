@@ -33,20 +33,8 @@
     "clean": {
       "cache": false
     },
-    "//#clean": {
+    "clean:all": {
       "cache": false
-    },
-    "push": {
-      "cache": false,
-      "interactive": true
-    },
-    "studio": {
-      "cache": false,
-      "persistent": true
-    },
-    "ui-add": {
-      "cache": false,
-      "interactive": true
     },
     "test": {
       "dependsOn": ["^topo", "^build"],
@@ -54,21 +42,5 @@
       "cache": false,
       "persistent": false
     }
-  },
-  "globalEnv": [
-    "POSTGRES_URL",
-    "AUTH_DISCORD_ID",
-    "AUTH_DISCORD_SECRET",
-    "AUTH_REDIRECT_PROXY_URL",
-    "AUTH_SECRET",
-    "PORT"
-  ],
-  "globalPassThroughEnv": [
-    "NODE_ENV",
-    "CI",
-    "VERCEL",
-    "VERCEL_ENV",
-    "VERCEL_URL",
-    "npm_lifecycle_event"
-  ]
+  }
 }

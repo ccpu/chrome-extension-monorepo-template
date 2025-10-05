@@ -1,3 +1,11 @@
-import reactConfig from '@pixpilot/eslint-config-react';
+import reactConfig from '@internal/eslint-config/react';
 
-export default reactConfig();
+/** @type {import('typescript-eslint').Config} */
+const config = [
+  ...reactConfig,
+  {
+    ignores: ['build/**', 'node_modules/**',  'src/zip.js'],
+  },
+];
+
+export default config;
