@@ -129,6 +129,12 @@ importers:
 
   apps/chrome-extension:
     dependencies:
+      '@internal/configs':
+        specifier: workspace:*
+        version: link:../../packages/configs
+      '@internal/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: catalog:prod
         version: 19.1.1
@@ -203,6 +209,30 @@ importers:
         specifier: catalog:dev
         version: 7.1.9(@types/node@22.18.8)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1)
 
+  packages/configs:
+    devDependencies:
+      '@internal/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@internal/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@internal/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      '@internal/vitest-config':
+        specifier: workspace:*
+        version: link:../../tooling/vitest
+      '@types/node':
+        specifier: catalog:dev
+        version: 22.18.8
+      eslint:
+        specifier: catalog:dev
+        version: 9.37.0(jiti@2.6.1)
+      typescript:
+        specifier: catalog:dev
+        version: 5.9.3
+
   packages/ui:
     dependencies:
       '@internal/utils':
@@ -215,6 +245,9 @@ importers:
       '@internal/prettier-config':
         specifier: workspace:*
         version: link:../../tooling/prettier
+      '@internal/tailwind':
+        specifier: workspace:*
+        version: link:../../tooling/tailwind
       '@internal/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript

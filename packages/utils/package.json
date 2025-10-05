@@ -9,7 +9,6 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsc --watch",
     "type-check": "tsc --noEmit",
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist",

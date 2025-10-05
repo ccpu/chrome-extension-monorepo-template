@@ -7,7 +7,6 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsc --watch",
     "type-check": "tsc --noEmit",
     "clean": "git clean -xdf .cache .turbo dist",
     "clean:all": "git clean -xdf .cache .turbo dist node_modules",
@@ -25,6 +24,7 @@
   "devDependencies": {
     "@internal/eslint-config": "workspace:*",
     "@internal/prettier-config": "workspace:*",
+    "@internal/tailwind": "workspace:*",
     "@internal/tsconfig": "workspace:*",
     "@internal/vitest-config": "workspace:*",
     "@pixpilot/dev-config": "catalog:dev",
