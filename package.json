@@ -2,18 +2,15 @@
   "name": "chrome-extension-monorepo-template",
   "private": true,
   "packageManager": "pnpm@10.18.0",
-  "description": "A production-ready Next.js 15 monorepo template with Cloudflare Workers deployment, TypeScript, Tailwind CSS, and Turborepo for fast development and edge deployment.",
+  "description": "A production-ready Chrome extension monorepo template with TypeScript, Vite, Turborepo, and modern tooling for fast development.",
   "keywords": [
-    "nextjs",
-    "cloudflare",
-    "workers",
+    "chrome-extension",
     "monorepo",
     "typescript",
-    "tailwindcss",
+    "vite",
     "turborepo",
     "template",
-    "edge",
-    "serverless"
+    "manifest-v3"
   ],
   "engines": {
     "node": ">=22.14.0",
@@ -27,7 +24,7 @@
     "format:fix": "pnpm format --write",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache && pnpm lint:root",
     "lint:fix": "pnpm lint --fix && pnpm lint:root:fix",
-    "lint:root": "eslint scripts .github *.config.{js,cjs,mjs,ts} *.json README.md --cache --cache-location .cache/.eslintcache",
+    "lint:root": "eslint *.config.{js,cjs,mjs,ts} *.json README.md --cache --cache-location .cache/.eslintcache",
     "lint:root:fix": "pnpm lint:root --fix",
     "lint:ws": "pnpm dlx sherif@latest",
     "fix:all": "pnpm format:fix && pnpm lint:fix",
