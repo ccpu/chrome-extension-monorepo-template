@@ -144,6 +144,9 @@ importers:
       '@internal/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      chrome-extension-messenger:
+        specifier: ^0.1.0
+        version: 0.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: catalog:prod
         version: 19.1.1
@@ -1993,6 +1996,12 @@ packages:
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
     engines: {node: '>=18'}
+
+  chrome-extension-messenger@0.1.0:
+    resolution: {integrity: sha512-9ArotleRdChx0SPbEbfh59W6G6MZlzNGiZ0pmImaOb/hZLGmd6sXXXmB4uSKq+1Iw+JK5OrAp6dDH2WfiC+NMA==}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
 
   ci-info@4.3.0:
     resolution: {integrity: sha512-l+2bNRMiQgcfILUi33labAZYIWlH1kWDp+ecNo5iisRKrbm0xcRyCww71/YU0Fkw0mAFpz9bJayXPjey6vkmaQ==}
@@ -7202,6 +7211,11 @@ snapshots:
       fsevents: 2.3.3
 
   chownr@3.0.0: {}
+
+  chrome-extension-messenger@0.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   ci-info@4.3.0: {}
 

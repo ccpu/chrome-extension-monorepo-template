@@ -43,6 +43,7 @@
   "dependencies": {
     "@internal/configs": "workspace:*",
     "@internal/ui": "workspace:*",
+    "chrome-extension-messenger": "^0.1.0",
     "react": "catalog:prod",
     "react-dom": "catalog:prod"
   },

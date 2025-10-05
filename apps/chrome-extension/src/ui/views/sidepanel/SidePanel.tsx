@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { exampleMessage } from '../../../messages';
 
 export function SidePanel() {
   const [countSync, setCountSync] = useState(0);
@@ -8,10 +9,8 @@ export function SidePanel() {
       setCountSync(result.count ?? 0);
     });
 
-    chrome.runtime.onMessage.addListener((request: { type: string; count?: number }) => {
-      if (request.type === 'COUNT') {
-        setCountSync(request.count ?? 0);
-      }
+    exampleMessage.onMessage((data) => {
+      setCountSync(data.count);
     });
   }, []);
 

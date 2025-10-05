@@ -1,5 +1,5 @@
-import { Button } from '@internal/ui';
 import { useEffect, useState } from 'react';
+import { useMessageEffect } from '../../../messages';
 
 const TIME_PAD_LENGTH = 2;
 const TIME_UPDATE_INTERVAL = 1000;
@@ -13,6 +13,13 @@ export function NewTab() {
   };
 
   const [time, setTime] = useState(() => getTime());
+  const [actions, setActions] = useState<{ id: number; action: string }[]>([]);
+  const [actionId, setActionId] = useState(0);
+
+  useMessageEffect((data) => {
+    setActions((prev) => [...prev, { id: actionId, action: data.action }]);
+    setActionId((prev) => prev + 1);
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -33,9 +40,18 @@ export function NewTab() {
           backgroundImage: "url('https://source.unsplash.com/random')",
         }}
       />
-      <Button>Hi</Button>
-      <span></span>
-      <h1 className="my-8 text-8xl text-cyan-400 uppercase">{time}</h1>
+
+      <div className="flex flex-col items-center">
+        <h1 className="my-8 text-8xl text-cyan-400 uppercase">{time}</h1>
+        <div className="my-4 max-h-40 overflow-y-auto">
+          <h2 className="mb-2 text-xl text-white">Logged Actions:</h2>
+          <ul className="text-white">
+            {actions.map(({ id, action }) => (
+              <li key={id}>{action}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
       <p className="my-2 text-xs text-gray-400">Chrome Extension Template</p>
     </section>
   );
