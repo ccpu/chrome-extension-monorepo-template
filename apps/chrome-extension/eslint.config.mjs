@@ -4,7 +4,7 @@ import reactConfig from '@internal/eslint-config/react';
 const config = [
   ...reactConfig,
   {
-    ignores: ['build/**', 'node_modules/**',  'src/zip.js'],
+    ignores: ['build/**', 'node_modules/**', 'src/zip.js'],
   },
 ];
 
