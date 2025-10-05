@@ -1,5 +1,4 @@
 packages:
-  - turbo
   - apps/*
   - packages/*
   - tooling/*
