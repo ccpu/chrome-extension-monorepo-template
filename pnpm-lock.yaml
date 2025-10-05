@@ -454,33 +454,6 @@ importers:
         specifier: catalog:dev
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.3.1)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1)
 
-  turbo:
-    devDependencies:
-      '@internal/prettier-config':
-        specifier: workspace:*
-        version: link:../tooling/prettier
-      '@internal/tsconfig':
-        specifier: workspace:*
-        version: link:../tooling/typescript
-      '@pixpilot/dev-config':
-        specifier: catalog:dev
-        version: 3.1.2(prettier@3.6.2)(typescript@5.9.3)
-      '@testing-library/dom':
-        specifier: ^10.4.1
-        version: 10.4.1
-      '@testing-library/react':
-        specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.0(@types/react@19.2.0))(@types/react@19.2.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@vitest/coverage-v8':
-        specifier: ^3.2.4
-        version: 3.2.4(vitest@3.2.4)
-      eslint:
-        specifier: catalog:dev
-        version: 9.37.0(jiti@2.6.1)
-      vitest:
-        specifier: catalog:dev
-        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.3.1)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1)
-
 packages:
 
   '@adobe/css-tools@4.4.4':
