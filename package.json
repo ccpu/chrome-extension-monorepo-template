@@ -54,6 +54,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.3",
     "prettier": "catalog:dev",
+    "prettier-plugin-tailwindcss": "catalog:dev",
     "tsx": "^4.20.6",
     "turbo": "^2.5.8",
     "typescript": "catalog:dev",

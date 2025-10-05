@@ -45,6 +45,9 @@ catalogs:
     prettier:
       specifier: ^3.6.2
       version: 3.6.2
+    prettier-plugin-tailwindcss:
+      specifier: ^0.6.14
+      version: 0.6.14
     tailwindcss:
       specifier: 4.1.12
       version: 4.1.12
@@ -111,6 +114,9 @@ importers:
       prettier:
         specifier: catalog:dev
         version: 3.6.2
+      prettier-plugin-tailwindcss:
+        specifier: catalog:dev
+        version: 0.6.14(prettier@3.6.2)
       tsx:
         specifier: ^4.20.6
         version: 4.20.6
@@ -362,7 +368,7 @@ importers:
         specifier: catalog:dev
         version: 3.6.2
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.14
+        specifier: catalog:dev
         version: 0.6.14(prettier@3.6.2)
     devDependencies:
       '@internal/tsconfig':
