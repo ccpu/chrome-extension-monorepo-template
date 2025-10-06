@@ -11,6 +11,32 @@
 - 🔧 ESLint & Prettier configured
 - 🚀 Hot module replacement in development
 
+## Project Structure
+
+````
+src/
+├── background/
+│   └── index.ts
+├── contentScript/
+│   └── index.ts
+├── messages/
+│   └── index.ts
+├── ui/
+│   ├── components/
+│   │   └── ViewProvider.tsx
+│   └── views/
+│       └── popup/
+        ...
+
+This architecture organizes the Chrome extension's source code by separating concerns for maintainability, scalability, and alignment with Chrome extension best practices:
+
+- **background/**: Handles background scripts (persistent logic, event listeners).
+- **contentScript/**: Manages content scripts (injected into web pages for DOM manipulation).
+- **ui/views/**: Contains UI components and views for extension pages (popup, options, newtab, etc.), using React for modularity.
+- **messages/**: Centralizes messaging APIs for communication between extension parts.
+
+This structure supports modern tooling (e.g., Vite for builds), enables clear separation of entry points, and facilitates testing/reuse across a monorepo.
+
 ## Getting Started
 
 1. Use this template or clone the repository
@@ -22,7 +48,7 @@
 
 ```bash
 pnpm dev
-```
+````
 
 Load the extension in Chrome:
 
