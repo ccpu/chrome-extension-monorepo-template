@@ -23,11 +23,11 @@ export function getManifest(isDev: boolean): ManifestV3Export {
       128: 'img/logo-128.png',
     },
     action: {
-      default_popup: 'popup.html',
+      default_popup: 'views/popup.html',
       default_icon: 'img/logo-48.png',
     },
-    options_page: 'options.html',
-    devtools_page: 'devtools.html',
+    options_page: 'views/options.html',
+    devtools_page: 'views/devtools.html',
     background: {
       service_worker: 'src/background/index.ts',
       type: 'module',
@@ -39,7 +39,7 @@ export function getManifest(isDev: boolean): ManifestV3Export {
       },
     ],
     side_panel: {
-      default_path: 'sidepanel.html',
+      default_path: 'views/sidepanel.html',
     },
     web_accessible_resources: [
       {
@@ -54,7 +54,7 @@ export function getManifest(isDev: boolean): ManifestV3Export {
     ],
     permissions: ['sidePanel', 'storage'],
     chrome_url_overrides: {
-      newtab: 'newtab.html',
+      newtab: 'views/newtab.html',
     },
   };
 

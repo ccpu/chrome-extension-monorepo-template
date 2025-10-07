@@ -11,6 +11,6 @@ ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(
   </ViewProvider>,
 );
 
-chrome.devtools.panels.create('ReactCrx', '', '../../devtools.html', () => {
+chrome.devtools.panels.create('ReactCrx', '', '../../../views/devtools.html', () => {
   console.warn('devtools panel create');
 });
