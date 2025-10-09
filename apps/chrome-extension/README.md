@@ -17,7 +17,7 @@
 src/
 ├── background/
 │   └── index.ts
-├── contentScript/
+├── content-script/
 │   └── index.ts
 ├── messages/
 │   └── index.ts
@@ -31,7 +31,7 @@ src/
 This architecture organizes the Chrome extension's source code by separating concerns for maintainability, scalability, and alignment with Chrome extension best practices:
 
 - **background/**: Handles background scripts (persistent logic, event listeners).
-- **contentScript/**: Manages content scripts (injected into web pages for DOM manipulation).
+- **content-script/**: Manages content scripts (injected into web pages for DOM manipulation).
 - **ui/views/**: Contains UI components and views for extension pages (popup, options, newtab, etc.), using React for modularity.
 - **messages/**: Centralizes messaging APIs for communication between extension parts.
 

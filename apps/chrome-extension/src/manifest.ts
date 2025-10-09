@@ -35,7 +35,7 @@ export function getManifest(isDev: boolean): ManifestV3Export {
     content_scripts: [
       {
         matches: ['http://*/*', 'https://*/*'],
-        js: ['src/contentScript/index.ts'],
+        js: ['src/content-script/index.ts'],
       },
     ],
     side_panel: {
