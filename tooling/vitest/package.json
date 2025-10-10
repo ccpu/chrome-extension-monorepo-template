@@ -5,20 +5,16 @@
   "private": true,
   "exports": {
     ".": {
-      "types": "./dist/vitest/index.d.ts",
-      "default": "./index.js"
+      "default": "./index.ts"
     },
     "./lib": {
-      "types": "./dist/vitest/lib.d.ts",
-      "default": "./lib.js"
+      "default": "./lib.ts"
     },
     "./react": {
-      "types": "./dist/vitest/react.d.ts",
-      "default": "./react.js"
+      "default": "./react.ts"
     }
   },
-  "main": "./index.js",
-  "types": "./dist/vitest/index.d.ts",
+  "main": "./index.ts",
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist",
