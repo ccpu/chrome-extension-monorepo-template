@@ -41,7 +41,7 @@
     "turbo:gen:init": "pnpm turbo gen init"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^19.8.1",
     "@internal/prettier-config": "workspace:*",
     "@pixpilot/dev-config": "catalog:dev",
