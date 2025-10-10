@@ -5,16 +5,20 @@
   "private": true,
   "exports": {
     ".": {
-      "default": "./index.ts"
+      "types": "./index.d.ts",
+      "default": "./index.js"
     },
     "./lib": {
-      "default": "./lib.ts"
+      "types": "./lib.d.ts",
+      "default": "./lib.js"
     },
     "./react": {
-      "default": "./react.ts"
+      "types": "./react.d.ts",
+      "default": "./react.js"
     }
   },
-  "main": "./index.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist",
