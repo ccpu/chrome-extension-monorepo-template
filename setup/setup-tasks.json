@@ -1,0 +1,106 @@
+{
+  "$schema": "https://unpkg.com/@pixpilot/scaffoldfy@latest/schema/tasks.schema.json",
+  "extends": [
+    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/project-info/template.json",
+    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/pixpilot-workspace-package-generator/template.json"
+  ],
+  "name": "pnpm-turbo-monorepo-template-setup",
+  "tasks": [
+    {
+      "id": "update-root-package",
+      "name": "Update root package.json",
+      "description": "Update repository information in root package.json",
+      "type": "update-json",
+      "config": {
+        "file": "package.json",
+        "updates": {
+          "name": "{{repoName}}",
+          "author": "{{author}} <{{authorEmail}}>",
+          "repository": {
+            "type": "git",
+            "url": "{{repoUrl}}"
+          },
+          "homepage": "{{baseRepoUrl}}"
+        }
+      }
+    },
+    {
+      "id": "clean-coverage",
+      "name": "Clean coverage directory",
+      "description": "Remove template coverage files",
+
+      "type": "delete",
+      "config": {
+        "paths": ["coverage"]
+      }
+    },
+    {
+      "id": "update-contributing",
+      "name": "Update CONTRIBUTING.md",
+      "description": "Update contributing guidelines with project info",
+      "type": "replace-in-file",
+      "config": {
+        "file": "CONTRIBUTING.md",
+        "replacements": [
+          {
+            "find": "pnpm-turbo-monorepo-template",
+            "replace": "{{repoName}}"
+          },
+          {
+            "find": "pixpilot/pnpm-turbo-monorepo-template",
+            "replace": "{{repoOwner}}/{{repoName}}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "update-security",
+      "name": "Update SECURITY.md",
+      "description": "Update security policy with project info",
+      "type": "replace-in-file",
+      "config": {
+        "file": "SECURITY.md",
+        "replacements": [
+          {
+            "find": "pnpm-turbo-monorepo-template",
+            "replace": "{{repoName}}"
+          },
+          {
+            "find": "pixpilot/pnpm-turbo-monorepo-template",
+            "replace": "{{repoOwner}}/{{repoName}}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "remove-setup-script",
+      "name": "Remove setup script",
+      "description": "Remove the setup script from package.json after setup is complete",
+      "type": "regex-replace",
+      "config": {
+        "file": "package.json",
+        "pattern": "\\n\\s*\"setup\":\\s*\"npx @pixpilot/scaffoldfy --tasks-file \\./setup/setup-tasks\\.json\",",
+        "flags": "",
+        "replacement": ""
+      }
+    },
+    {
+      "id": "delete-setup-tasks",
+      "name": "Delete setup tasks file",
+      "description": "Remove the setup-tasks.json file after setup is complete",
+      "type": "delete",
+      "config": {
+        "paths": ["setup"]
+      }
+    },
+    {
+      "id": "install-dependencies",
+      "name": "Install dependencies",
+      "description": "Install project dependencies using pnpm",
+      "type": "exec",
+      "config": {
+        "command": "pnpm install"
+      }
+    }
+  ]
+}

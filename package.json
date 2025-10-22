@@ -17,6 +17,7 @@
     "pnpm": ">=9.6.0"
   },
   "scripts": {
+    "setup": "npx @pixpilot/scaffoldfy --tasks-file ./setup/setup-tasks.json",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "tsc:watch": "pnpm exec tsc --noEmit --watch --project tsconfig.watch.json",
@@ -41,11 +42,12 @@
     "turbo:gen:init": "pnpm turbo gen init"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@changesets/cli": "^2.29.7",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@internal/prettier-config": "workspace:*",
     "@pixpilot/dev-config": "catalog:dev",
-    "@pixpilot/workspace-package-generator": "^1.1.5",
+    "@pixpilot/workspace-package-generator": "^2.1.1",
     "@testing-library/jest-dom": "catalog:dev",
     "@turbo/gen": "^2.5.8",
     "@types/chrome": "catalog:dev",
@@ -53,7 +55,7 @@
     "@vitest/ui": "catalog:dev",
     "eslint": "catalog:dev",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.3",
+    "lint-staged": "^16.2.5",
     "prettier": "catalog:dev",
     "prettier-plugin-tailwindcss": "catalog:dev",
     "tsx": "^4.20.6",

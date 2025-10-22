@@ -40,7 +40,7 @@ This structure supports modern tooling (e.g., Vite for builds), enables clear se
 ## Getting Started
 
 1. Use this template or clone the repository
-2. Install dependencies: `pnpm install`
+2. Run setup: `pnpm run setup`
 3. Configure your extension in `src/manifest.ts`
 4. Start developing: `pnpm dev`
 
