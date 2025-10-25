@@ -1,20 +1,20 @@
 {
   "$schema": "https://unpkg.com/@pixpilot/scaffoldfy@latest/schema/tasks.schema.json",
   "extends": [
-    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/project-info/scaffoldfy.json",
-    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/pixpilot-workspace-package-generator/scaffoldfy.json",
-    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/license-file/scaffoldfy.json",
-    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/update-root-package-json/scaffoldfy.json",
-    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/security-policy/scaffoldfy.json",
-    "https://unpkg.com/@pixpilot/scaffoldfy-templates@latest/pixpilot-copilot-instructions/scaffoldfy.json"
+    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/project-info/scaffoldfy.json",
+    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/pixpilot-info/scaffoldfy.json",
+    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/turbo-workspace-package-generator/scaffoldfy.json",
+    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/license-file/scaffoldfy.json",
+    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/update-root-package-json/scaffoldfy.json",
+    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/pixpilot-copilot-instructions/scaffoldfy.json"
   ],
-  "name": "pnpm-turbo-monorepo-template-setup",
+  "name": "chrome-extension-monorepo-template-setup",
   "tasks": [
     {
       "id": "clean-readme",
       "name": "Clean README",
       "description": "Create a fresh README for the new project",
-      "type": "template",
+      "type": "write",
       "config": {
         "file": "README.md",
         "templateFile": "./templates/clean-readme.md"
@@ -29,12 +29,8 @@
         "file": "CONTRIBUTING.md",
         "replacements": [
           {
-            "find": "pnpm-turbo-monorepo-template",
+            "find": "chrome-extension-monorepo-template",
             "replace": "{{repoName}}"
-          },
-          {
-            "find": "pixpilot/pnpm-turbo-monorepo-template",
-            "replace": "{{repoOwner}}/{{repoName}}"
           }
         ]
       }
@@ -61,9 +57,9 @@
       }
     },
     {
-      "id": "reinstall-dependencies",
-      "name": "Reinstall dependencies",
-      "description": "Reinstall dependencies after cleanup",
+      "id": "install-dependencies",
+      "name": "Install dependencies",
+      "description": "Install dependencies after cleanup",
       "type": "exec",
       "config": {
         "command": "pnpm install"

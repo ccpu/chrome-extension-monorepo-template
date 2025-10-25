@@ -5,7 +5,7 @@ A template for building Chrome extensions using a monorepo structure with TypeSc
 ## Getting Started
 
 1. Clone the repository
-2. Install dependencies: `pnpm install`
+2. Run setup: `pnpm run setup`
 3. Build the extension: `pnpm build`
 4. Load the extension in Chrome from the `apps/chrome-extension/build` directory
 

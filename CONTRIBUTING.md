@@ -1,4 +1,4 @@
-# Contributing to nestjs-auth-adapter
+# Contributing to chrome-extension-monorepo-template
 
 Thank you for your interest in contributing! 🎉
 
