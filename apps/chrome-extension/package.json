@@ -43,7 +43,7 @@
   "dependencies": {
     "@internal/configs": "workspace:*",
     "@internal/ui": "workspace:*",
-    "chrome-extension-messenger": "^0.1.0",
+    "@pixpilot/chrome-messenger": "^0.3.0",
     "react": "catalog:prod",
     "react-dom": "catalog:prod"
   },

@@ -147,9 +147,9 @@ importers:
       '@internal/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      chrome-extension-messenger:
-        specifier: ^0.1.0
-        version: 0.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@pixpilot/chrome-messenger':
+        specifier: ^0.3.0
+        version: 0.3.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: catalog:prod
         version: 19.1.1
@@ -1170,6 +1170,12 @@ packages:
       vue-eslint-parser:
         optional: true
 
+  '@pixpilot/chrome-messenger@0.3.0':
+    resolution: {integrity: sha512-hXrhLDLoOaVCppZNVrAWaVuWL2wkyxeVEObZtOvp8hwp/8U+RgQuJouAqrbzpLlRoSrgSD23ex+EVqXLJZHg5g==}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+
   '@pixpilot/dev-config@3.1.2':
     resolution: {integrity: sha512-S9ZYtYGaktbXBQXh3aoV1PIjxY4kgQ3K7qM2LE/bks6A6lSlqH9IdVODGuf9cAPBtg5KkNZyQ53xbU6T0fAKKw==}
     engines: {node: '>=20', pnpm: '>=9.6.0'}
@@ -2074,12 +2080,6 @@ packages:
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
     engines: {node: '>=18'}
-
-  chrome-extension-messenger@0.1.0:
-    resolution: {integrity: sha512-9ArotleRdChx0SPbEbfh59W6G6MZlzNGiZ0pmImaOb/hZLGmd6sXXXmB4uSKq+1Iw+JK5OrAp6dDH2WfiC+NMA==}
-    peerDependencies:
-      react: '*'
-      react-dom: '*'
 
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
@@ -6423,6 +6423,11 @@ snapshots:
       - typescript
       - vitest
 
+  '@pixpilot/chrome-messenger@0.3.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+
   '@pixpilot/dev-config@3.1.2(prettier@3.6.2)(typescript@5.9.3)':
     dependencies:
       '@fastify/deepmerge': 3.1.0
@@ -7569,11 +7574,6 @@ snapshots:
       fsevents: 2.3.3
 
   chownr@3.0.0: {}
-
-  chrome-extension-messenger@0.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
-    dependencies:
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
 
   ci-info@3.9.0: {}
 
