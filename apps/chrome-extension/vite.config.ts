@@ -35,6 +35,7 @@ export default defineConfig(({ mode }) => ({
   ],
   define: {
     __DEV__: mode === 'development',
+    'process.env.NODE_ENV': JSON.stringify(mode),
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],
