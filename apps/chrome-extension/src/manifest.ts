@@ -12,7 +12,7 @@ interface PackageJson {
 export function getManifest(isDev: boolean): ManifestV3Export {
   const pkg = packageData as PackageJson;
   const manifest: ManifestV3Export = {
-    name: `${pkg.displayName ?? pkg.name}${isDev ? ` ➡️ Dev` : ''}`,
+    name: `${isDev ? `➡️ Dev > ` : ''}${pkg.displayName ?? pkg.name}`,
     description: pkg.description,
     version: pkg.version,
     manifest_version: 3,
