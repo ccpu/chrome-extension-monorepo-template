@@ -29,7 +29,7 @@
     "lint:root:fix": "pnpm lint:root --fix",
     "lint:ws": "pnpm dlx sherif@latest",
     "fix:all": "pnpm format:fix && pnpm lint:fix",
-    "postinstall": "pnpm lint:ws",
+    "postinstall": "pnpm lint:ws && node setup/guard.mjs warn",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "test:ui": "vitest --ui",

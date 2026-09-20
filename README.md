@@ -9,6 +9,11 @@ A template for building Chrome extensions using a monorepo structure with TypeSc
 3. Build the extension: `pnpm build`
 4. Load the extension in Chrome from the `apps/chrome-extension/build` directory
 
+Step 2 is a one-time step. Until `pnpm run setup` has run, `pnpm install` prints a
+reminder and `git commit` is blocked. Setup ends by deleting the `setup/` folder,
+so the gate removes itself. It is skipped in CI, in this template repo itself, and
+with `SKIP_SETUP_CHECK=1`.
+
 ## Structure
 
 - `apps/chrome-extension/`: The main Chrome extension app
