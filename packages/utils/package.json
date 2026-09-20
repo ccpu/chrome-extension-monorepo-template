@@ -33,8 +33,7 @@
     "@testing-library/jest-dom": "catalog:dev",
     "eslint": "catalog:dev",
     "prettier": "catalog:dev",
-    "typescript": "catalog:dev",
-    "typescript-eslint": "catalog:dev"
+    "typescript": "catalog:dev"
   },
   "prettier": "@internal/prettier-config"
 }

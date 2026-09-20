@@ -36,7 +36,6 @@
     "@vitest/coverage-v8": "^3.2.4",
     "eslint": "catalog:dev",
     "jsdom": "^26.1.0",
-    "typescript-eslint": "catalog:dev",
     "vitest": "catalog:dev"
   },
   "prettier": "@internal/prettier-config"

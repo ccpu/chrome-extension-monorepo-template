@@ -2,6 +2,8 @@ import defineConfig from '@pixpilot/eslint-config';
 import turboPlugin from 'eslint-plugin-turbo';
 import commonConfig from './common.mjs';
 
+const turboRecommendedConfig = turboPlugin?.configs?.recommended;
+
 // eslint-disable-next-line antfu/no-top-level-await
 const baseConfig = await defineConfig(
   {
@@ -21,7 +23,9 @@ const baseConfig = await defineConfig(
       turbo: turboPlugin,
     },
     rules: {
-      ...turboPlugin.configs.recommended.rules,
+      ...(Array.isArray(turboRecommendedConfig)
+        ? {}
+        : (turboRecommendedConfig?.rules ?? {})),
       'no-restricted-imports': [
         'error',
         {

@@ -34,8 +34,7 @@
     "eslint": "catalog:dev",
     "prettier": "catalog:dev",
     "react": "catalog:prod",
-    "typescript": "catalog:dev",
-    "typescript-eslint": "catalog:dev"
+    "typescript": "catalog:dev"
   },
   "prettier": "@internal/prettier-config"
 }
