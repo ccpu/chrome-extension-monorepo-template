@@ -1,9 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { useMessageEffect } from '../../../messages';
 
 const TIME_PAD_LENGTH = 2;
 const TIME_UPDATE_INTERVAL = 1000;
 
+interface ActionLogState {
+  actions: { id: number; action: string }[];
+  nextActionId: number;
+}
+
+function actionLogReducer(state: ActionLogState, action: string): ActionLogState {
+  return {
+    actions: [...state.actions, { id: state.nextActionId, action }],
+    nextActionId: state.nextActionId + 1,
+  };
+}
+
+/** Renders the extension new-tab page and its received action log. */
 export function NewTab() {
   const getTime = () => {
     const date = new Date();
@@ -13,12 +26,13 @@ export function NewTab() {
   };
 
   const [time, setTime] = useState(() => getTime());
-  const [actions, setActions] = useState<{ id: number; action: string }[]>([]);
-  const [actionId, setActionId] = useState(0);
+  const [actionLog, dispatchAction] = useReducer(actionLogReducer, {
+    actions: [],
+    nextActionId: 0,
+  });
 
   useMessageEffect((data) => {
-    setActions((prev) => [...prev, { id: actionId, action: data.action }]);
-    setActionId((prev) => prev + 1);
+    dispatchAction(data.action);
   }, []);
 
   useEffect(() => {
@@ -46,7 +60,7 @@ export function NewTab() {
         <div className="my-4 max-h-40 overflow-y-auto">
           <h2 className="mb-2 text-xl text-white">Logged Actions:</h2>
           <ul className="text-white">
-            {actions.map(({ id, action }) => (
+            {actionLog.actions.map(({ id, action }) => (
               <li key={id}>{action}</li>
             ))}
           </ul>

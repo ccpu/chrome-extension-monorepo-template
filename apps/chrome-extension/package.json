@@ -43,12 +43,12 @@
   "dependencies": {
     "@internal/configs": "workspace:*",
     "@internal/ui": "workspace:*",
-    "@pixpilot/chrome-messenger": "^0.3.0",
+    "@pixpilot/chrome-messenger": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod"
   },
   "devDependencies": {
-    "@crxjs/vite-plugin": "^2.2.0",
+    "@crxjs/vite-plugin": "catalog:dev",
     "@internal/eslint-config": "workspace:*",
     "@internal/prettier-config": "workspace:*",
     "@internal/tsconfig": "workspace:*",
@@ -62,11 +62,11 @@
     "@types/react-dom": "catalog:dev",
     "@vitejs/plugin-react": "catalog:dev",
     "eslint": "catalog:dev",
-    "gulp": "^5.0.1",
-    "gulp-zip": "^6.1.0",
-    "husky": "^9.1.7",
-    "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.6.14",
+    "gulp": "catalog:dev",
+    "gulp-zip": "catalog:dev",
+    "husky": "catalog:dev",
+    "prettier": "catalog:dev",
+    "prettier-plugin-tailwindcss": "catalog:dev",
     "tailwindcss": "catalog:dev",
     "typescript": "catalog:dev",
     "vite": "catalog:dev"

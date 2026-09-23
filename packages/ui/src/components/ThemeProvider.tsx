@@ -10,6 +10,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+/** Provides the persisted theme and applies it to the document root. */
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
@@ -17,7 +18,7 @@ export function ThemeProvider({
   children: React.ReactNode;
   defaultTheme?: string;
 }) {
-  const [theme, setThemeState] = useState<Theme>(() => {
+  const [selectedTheme, setSelectedTheme] = useState<Theme>(() => {
     const savedTheme = window.localStorage.getItem('theme');
     return savedTheme !== null ? savedTheme : defaultTheme;
   });
@@ -32,15 +33,15 @@ export function ThemeProvider({
 
   // Set theme and persist
   const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+    setSelectedTheme(newTheme);
     window.localStorage.setItem('theme', newTheme);
   };
 
   // Apply theme to document
   useEffect(() => {
     const root = window.document.documentElement;
-    let appliedTheme = theme;
-    if (theme === 'system') {
+    let appliedTheme = selectedTheme;
+    if (selectedTheme === 'system') {
       appliedTheme = getSystemTheme();
     }
     if (appliedTheme === 'dark') {
@@ -48,11 +49,11 @@ export function ThemeProvider({
     } else {
       root.classList.remove('dark');
     }
-  }, [theme]);
+  }, [selectedTheme]);
 
   // Listen for system theme changes if "system" is selected
   useEffect(() => {
-    if (theme !== 'system') return;
+    if (selectedTheme !== 'system') return;
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     function handler() {
       const root = window.document.documentElement;
@@ -65,10 +66,12 @@ export function ThemeProvider({
     media.addEventListener('change', handler);
     // eslint-disable-next-line consistent-return
     return () => media.removeEventListener('change', handler);
-  }, [theme]);
+  }, [selectedTheme]);
 
   return (
-    <ThemeContext value={useMemo(() => ({ theme, setTheme }), [theme])}>
+    <ThemeContext
+      value={useMemo(() => ({ theme: selectedTheme, setTheme }), [selectedTheme])}
+    >
       {children}
     </ThemeContext>
   );
