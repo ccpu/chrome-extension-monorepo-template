@@ -7,7 +7,6 @@
     "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/turbo-workspace-package-generator/scaffoldfy.json",
     "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/license-file/scaffoldfy.json",
     "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/update-root-package-json/scaffoldfy.json",
-    "https://unpkg.com/@pixpilot/scaffoldfy-configs@latest/pixpilot-copilot-instructions/scaffoldfy.json"
   ],
   "name": "chrome-extension-monorepo-template-setup",
   "description": "Initial setup for the Chrome extension monorepo template. The shared setup-guard config strips the one-time gate; this config deletes setup/ afterwards, once clean-readme has read its template from there.",
