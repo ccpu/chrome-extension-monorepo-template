@@ -19,7 +19,8 @@
     "build": "tsc --outDir dist --declaration --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@internal/utils": "workspace:*"
+    "@internal/utils": "workspace:*",
+    "next-themes": "catalog:react"
   },
   "devDependencies": {
     "@internal/eslint-config": "workspace:*",

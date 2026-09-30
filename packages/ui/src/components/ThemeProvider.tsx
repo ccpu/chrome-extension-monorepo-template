@@ -1,77 +1,19 @@
-import React, { createContext, useEffect, useMemo, useState } from 'react';
+'use client';
 
-type Theme = string;
+import type { ComponentProps } from 'react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-interface ThemeContextType {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-}
+export type ThemeProviderProps = ComponentProps<typeof NextThemesProvider>;
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-/** Provides the persisted theme and applies it to the document root. */
-export function ThemeProvider({
-  children,
-  defaultTheme = 'system',
-}: {
-  children: React.ReactNode;
-  defaultTheme?: string;
-}) {
-  const [selectedTheme, setSelectedTheme] = useState<Theme>(() => {
-    const savedTheme = window.localStorage.getItem('theme');
-    return savedTheme !== null ? savedTheme : defaultTheme;
-  });
-
-  // Helper: get system theme
-  const getSystemTheme = () => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return 'light';
-  };
-
-  // Set theme and persist
-  const setTheme = (newTheme: Theme) => {
-    setSelectedTheme(newTheme);
-    window.localStorage.setItem('theme', newTheme);
-  };
-
-  // Apply theme to document
-  useEffect(() => {
-    const root = window.document.documentElement;
-    let appliedTheme = selectedTheme;
-    if (selectedTheme === 'system') {
-      appliedTheme = getSystemTheme();
-    }
-    if (appliedTheme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [selectedTheme]);
-
-  // Listen for system theme changes if "system" is selected
-  useEffect(() => {
-    if (selectedTheme !== 'system') return;
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    function handler() {
-      const root = window.document.documentElement;
-      if (media.matches) {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-      }
-    }
-    media.addEventListener('change', handler);
-    // eslint-disable-next-line consistent-return
-    return () => media.removeEventListener('change', handler);
-  }, [selectedTheme]);
-
+/**
+ * Put the `dark` class on <html> for the selected theme, saved in `localStorage`
+ * under `theme`, following the system theme until one is picked.
+ *
+ * Use it in app pages, not in content scripts: there `localStorage` and <html>
+ * belong to the website.
+ */
+export function ThemeProvider(props: ThemeProviderProps) {
   return (
-    <ThemeContext
-      value={useMemo(() => ({ theme: selectedTheme, setTheme }), [selectedTheme])}
-    >
-      {children}
-    </ThemeContext>
+    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem {...props} />
   );
 }

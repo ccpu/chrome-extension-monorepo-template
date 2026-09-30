@@ -38,6 +38,9 @@ catalogs:
     '@types/react-dom':
       specifier: ^19.3.0
       version: 19.3.0
+    next-themes:
+      specifier: ^0.4.6
+      version: 0.4.6
     react:
       specifier: 19.1.1
       version: 19.1.1
@@ -322,6 +325,9 @@ importers:
       '@internal/utils':
         specifier: workspace:*
         version: link:../utils
+      next-themes:
+        specifier: catalog:react
+        version: 0.4.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
     devDependencies:
       '@internal/eslint-config':
         specifier: workspace:*
@@ -3772,6 +3778,12 @@ packages:
   natural-orderby@5.0.0:
     resolution: {integrity: sha512-kKHJhxwpR/Okycz4HhQKKlhWe4ASEfPgkSWNmKFHd7+ezuQlxkA5cM3+XkBPvm1gmHen3w53qsYAv+8GwRrBlg==}
     engines: {node: '>=18'}
+
+  next-themes@0.4.6:
+    resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   node-html-parser@7.1.0:
     resolution: {integrity: sha512-iJo8b2uYGT40Y8BTyy5ufL6IVbN8rbm/1QK2xffXU/1a/v3AAa0d1YAoqBNYqaS4R/HajkWIpIfdE6KcyFh1AQ==}
@@ -8776,6 +8788,11 @@ snapshots:
   natural-compare@1.4.0: {}
 
   natural-orderby@5.0.0: {}
+
+  next-themes@0.4.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   node-html-parser@7.1.0:
     dependencies:
