@@ -5,8 +5,16 @@
   "files": [
     "*.json"
   ],
+  "scripts": {
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
+    "lint": "eslint package.json validate-configs.mjs --config ../eslint/base.mjs",
+    "typecheck": "node validate-configs.mjs"
+  },
   "devDependencies": {
-    "@pixpilot/dev-config": "catalog:dev"
+    "@pixpilot/dev-config": "catalog:dev",
+    "eslint": "catalog:dev",
+    "prettier": "catalog:dev",
+    "typescript": "catalog:dev"
   },
   "prettier": "@internal/prettier-config"
 }

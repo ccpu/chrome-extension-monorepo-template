@@ -10,7 +10,7 @@ const config = {
   plugins: ['prettier-plugin-tailwindcss'],
   tailwindFunctions: ['cn', 'cva'],
   overrides: [
-    ...prettierConfig.overrides,
+    ...(prettierConfig.overrides ?? []),
     {
       files: '*.js.hbs',
       options: {
