@@ -1,0 +1,25 @@
+{
+  "name": "@internal/styles",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/globals.css"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo",
+    "clean:all": "git clean -xdf .cache .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore"
+  },
+  "dependencies": {
+    "tailwindcss": "catalog:styling"
+  },
+  "devDependencies": {
+    "@internal/prettier-config": "workspace:*",
+    "prettier": "catalog:tooling"
+  },
+  "prettier": "@internal/prettier-config"
+}

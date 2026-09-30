@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
-import '@internal/tailwind/globals.css';
 
 type Theme = string;
 

@@ -24,7 +24,6 @@
   "devDependencies": {
     "@internal/eslint-config": "workspace:*",
     "@internal/prettier-config": "workspace:*",
-    "@internal/tailwind": "workspace:*",
     "@internal/tsconfig": "workspace:*",
     "@internal/vitest-config": "workspace:*",
     "@pixpilot/dev-config": "catalog:pixpilot",

@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@internal/configs": "workspace:*",
+    "@internal/styles": "workspace:*",
     "@internal/ui": "workspace:*",
     "@pixpilot/chrome-messenger": "catalog:chrome",
     "react": "catalog:react",

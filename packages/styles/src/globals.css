@@ -1,5 +1,8 @@
-@import 'tailwindcss';
-@source "../../packages/**/*.{js,ts,jsx,tsx}";
+@import 'tailwindcss' source(none);
+
+@source '../../../apps/chrome-extension/src/**/*.{tsx,ts}';
+@source '../../../apps/chrome-extension/views/*.html';
+@source '../../../packages/ui/src/**/*.{tsx,ts}';
 
 /* Configure dark mode variant for Tailwind v4 with class-based theming */
 @custom-variant dark (&:where(.dark, .dark *));

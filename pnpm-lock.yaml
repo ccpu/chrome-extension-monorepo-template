@@ -200,6 +200,9 @@ importers:
       '@internal/configs':
         specifier: workspace:*
         version: link:../../packages/configs
+      '@internal/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
       '@internal/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -301,6 +304,19 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/styles:
+    dependencies:
+      tailwindcss:
+        specifier: catalog:styling
+        version: 4.1.12
+    devDependencies:
+      '@internal/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      prettier:
+        specifier: catalog:tooling
+        version: 3.9.9
+
   packages/ui:
     dependencies:
       '@internal/utils':
@@ -313,9 +329,6 @@ importers:
       '@internal/prettier-config':
         specifier: workspace:*
         version: link:../../tooling/prettier
-      '@internal/tailwind':
-        specifier: workspace:*
-        version: link:../../tooling/tailwind
       '@internal/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -430,34 +443,6 @@ importers:
       '@pixpilot/dev-config':
         specifier: catalog:pixpilot
         version: 3.22.1
-      '@types/node':
-        specifier: ^22.20.4
-        version: 22.20.4
-      eslint:
-        specifier: catalog:tooling
-        version: 9.37.0(jiti@2.7.0)
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  tooling/tailwind:
-    dependencies:
-      tailwindcss:
-        specifier: catalog:styling
-        version: 4.1.12
-    devDependencies:
-      '@internal/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint
-      '@internal/prettier-config':
-        specifier: workspace:*
-        version: link:../prettier
-      '@internal/tsconfig':
-        specifier: workspace:*
-        version: link:../typescript
-      '@internal/vitest-config':
-        specifier: workspace:*
-        version: link:../vitest
       '@types/node':
         specifier: ^22.20.4
         version: 22.20.4
@@ -1560,6 +1545,36 @@ packages:
         optional: true
       '@types/react-dom':
         optional: true
+
+  '@turbo/darwin-64@2.11.5':
+    resolution: {integrity: sha512-KdY4y7BBjIisl+jAkb3FFaRjClGqHyaeHCcVcCT8LBzFFwUu6thgfxyRZAx0uL4KoxLmH+iOan8UhVf/aDDcaA==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@turbo/darwin-arm64@2.11.5':
+    resolution: {integrity: sha512-ToZDGi2u410+TfRtC/O1/LpujGgvNJoRBZnwVXob7oO0+3OSlwIO3zofXKUvwQvlba7a8ZXPyCZwufjAXd7f0w==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@turbo/linux-64@2.11.5':
+    resolution: {integrity: sha512-Ub2d/nAbdWLaSytcEaPp1wm/YuIvHEIqNrCRMI/UgOGyFdOhgxm8VyWPAJilQWRYxYVrqEUoy2K5S5K8SG50rA==}
+    cpu: [x64]
+    os: [android, linux]
+
+  '@turbo/linux-arm64@2.11.5':
+    resolution: {integrity: sha512-JQjmGxp724Wuft9FAxPMtmBur1CEdUyxJ+FVoIvKkgj63rXHl9PYCWrsU2tMjVi609XTQ3M8vZD9Yc9qVAVYrw==}
+    cpu: [arm64]
+    os: [android, linux]
+
+  '@turbo/windows-64@2.11.5':
+    resolution: {integrity: sha512-AFkbPmXNd8XgCi/66YEHR2bVl3gtusXyDihTIVEPAuSB+7ulLmJePvz1unWPVKLHdbCTTIdKq2mpJ1B1e3lJXw==}
+    cpu: [x64]
+    os: [win32]
+
+  '@turbo/windows-arm64@2.11.5':
+    resolution: {integrity: sha512-52ziXYP3snGOxjv19xA3WL1WDKv9Q6uDAa/7EKIR5j4hocMlYURkrOHbJ2ZZI+VfPU5MwKpcGeRfHxHJu7Y/Pw==}
+    cpu: [arm64]
+    os: [win32]
 
   '@types/aria-query@5.0.4':
     resolution: {integrity: sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw==}
@@ -6096,6 +6111,24 @@ snapshots:
       '@types/react': 19.3.0
       '@types/react-dom': 19.3.0(@types/react@19.3.0)
 
+  '@turbo/darwin-64@2.11.5':
+    optional: true
+
+  '@turbo/darwin-arm64@2.11.5':
+    optional: true
+
+  '@turbo/linux-64@2.11.5':
+    optional: true
+
+  '@turbo/linux-arm64@2.11.5':
+    optional: true
+
+  '@turbo/windows-64@2.11.5':
+    optional: true
+
+  '@turbo/windows-arm64@2.11.5':
+    optional: true
+
   '@types/aria-query@5.0.4': {}
 
   '@types/babel__core@7.20.5':
@@ -9493,7 +9526,14 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  turbo@2.11.5: {}
+  turbo@2.11.5:
+    optionalDependencies:
+      '@turbo/darwin-64': 2.11.5
+      '@turbo/darwin-arm64': 2.11.5
+      '@turbo/linux-64': 2.11.5
+      '@turbo/linux-arm64': 2.11.5
+      '@turbo/windows-64': 2.11.5
+      '@turbo/windows-arm64': 2.11.5
 
   type-check@0.4.0:
     dependencies:

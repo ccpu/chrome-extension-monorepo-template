@@ -17,7 +17,7 @@ with `SKIP_SETUP_CHECK=1`.
 ## Structure
 
 - `apps/chrome-extension/`: The main Chrome extension app
-- `packages/`: Shared packages (ui, utils, tooling)
+- `packages/`: Shared packages (configs, styles, ui, utils)
 - `tooling/`: Configuration for linting, formatting, etc.
 
 ## Contributing

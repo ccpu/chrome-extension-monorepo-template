@@ -1,6 +1,7 @@
 import { appConfig } from '@internal/configs';
 import { ThemeProvider } from '@internal/ui';
 import React from 'react';
+import '@internal/styles';
 
 export interface ViewProviderProps extends React.PropsWithChildren {}
 
