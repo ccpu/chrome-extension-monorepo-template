@@ -4,62 +4,65 @@ packages:
   - tooling/*
 
 catalogs:
-  dev:
-    "@changesets/cli": ^2.31.1
-    "@commitlint/cli": ^20.5.3
-    "@commitlint/config-conventional": ^20.5.3
-    "@crxjs/vite-plugin": ^2.7.1
-    "@pixpilot/workspace-package-generator": ^2.1.1
-    "@pixpilot/eslint-config": ^3.0.0
-    "@pixpilot/eslint-config-next": ^1.0.0
-    "@pixpilot/eslint-config-react": ^0.10.1
-    "@tailwindcss/vite": ^4.3.3
-    "@testing-library/jest-dom": ^6.9.1
-    "@types/chrome": ^0.1.43
-    "@vitejs/plugin-react": ^5.2.0
-    "@babel/core": ^7.29.7
-    "@pixpilot/dev-config": ^3.22.1
-    "@testing-library/dom": ^10.4.2
-    "@testing-library/react": ^16.3.3
-    "@types/node": ^22.20.4
-    "@types/react": ^19.3.0
-    "@types/react-dom": ^19.3.0
-    "@turbo/gen": ^2.11.5
-    "@vitest/coverage-v8": ^3.2.7
-    "@vitest/ui": ^3.2.7
+  react:
+    react: 19.1.1
+    react-dom: 19.1.1
+    '@types/react': ^19.3.0
+    '@types/react-dom': ^19.3.0
 
+  chrome:
+    '@crxjs/vite-plugin': ^2.7.1
+    '@pixpilot/chrome-messenger': ^0.3.0
+    '@types/chrome': ^0.1.43
+
+  validation:
+    zod: 4.0.17
+
+  testing:
+    '@testing-library/dom': ^10.4.2
+    '@testing-library/jest-dom': ^6.9.1
+    '@testing-library/react': ^16.3.3
+    '@vitest/coverage-v8': ^3.2.7
+    '@vitest/ui': ^3.2.7
+    jsdom: ^26.1.0
+    vitest: ^3.2.7
+
+  styling:
+    '@tailwindcss/vite': ^4.3.3
     autoprefixer: ^10.6.1
+    clsx: ^2.1.1
+    postcss: ^8.5.28
+    tailwind-merge: ^3.7.0
+    tailwindcss: 4.1.12
+
+  tooling:
+    '@babel/core': ^7.29.7
+    '@changesets/cli': ^2.31.1
+    '@commitlint/cli': ^20.5.3
+    '@commitlint/config-conventional': ^20.5.3
+    '@types/node': ^22.20.4
+    '@vitejs/plugin-react': ^5.2.0
     eslint: ^9.37.0
     eslint-plugin-jest: ^29.16.6
     eslint-plugin-turbo: ^2.11.5
     gulp: ^5.0.1
     gulp-zip: ^6.1.0
     husky: ^9.1.7
-    jsdom: ^26.1.0
     lint-staged: ^16.4.0
-    postcss: ^8.5.28
     prettier: ^3.9.9
     prettier-plugin-tailwindcss: ^0.6.14
-    tailwindcss: 4.1.12
-    typescript: ^5.9.3
     tsx: ^4.23.15
     turbo: ^2.11.5
+    typescript: ^5.9.3
     vite: ^7.3.6
-    vitest: ^3.2.7
 
-  prod:
-    "@pixpilot/chrome-messenger": ^0.3.0
-    clsx: ^2.1.1
-    react: 19.1.1
-    react-dom: 19.1.1
-    tailwind-merge: ^3.7.0
-    zod: 4.0.17
+  pixpilot:
+    '@pixpilot/dev-config': ^3.22.1
+    '@pixpilot/eslint-config': ^3.0.0
+    '@pixpilot/eslint-config-next': ^1.0.0
+    '@pixpilot/eslint-config-react': ^0.10.1
+    '@pixpilot/workspace-package-generator': ^2.1.1
 
-  overrides:
-    "@types/node": catalog:dev
-catalog:
-  "@pixpilot/eslint-config": ^3.0.0
-  "@pixpilot/eslint-config-next": ^1.0.0
-  "@pixpilot/eslint-config-react": ^0.10.1
-  eslint-plugin-jest: ^29.16.6
-  eslint-plugin-turbo: ^2.11.5
+overrides:
+  '@types/node': catalog:tooling
+  typescript: catalog:tooling

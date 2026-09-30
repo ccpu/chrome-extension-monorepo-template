@@ -27,14 +27,14 @@
     "@internal/tailwind": "workspace:*",
     "@internal/tsconfig": "workspace:*",
     "@internal/vitest-config": "workspace:*",
-    "@pixpilot/dev-config": "catalog:dev",
-    "@testing-library/jest-dom": "catalog:dev",
-    "@testing-library/react": "catalog:dev",
-    "@types/react": "catalog:dev",
-    "eslint": "catalog:dev",
-    "prettier": "catalog:dev",
-    "react": "catalog:prod",
-    "typescript": "catalog:dev"
+    "@pixpilot/dev-config": "catalog:pixpilot",
+    "@testing-library/jest-dom": "catalog:testing",
+    "@testing-library/react": "catalog:testing",
+    "@types/react": "catalog:react",
+    "eslint": "catalog:tooling",
+    "prettier": "catalog:tooling",
+    "react": "catalog:react",
+    "typescript": "catalog:tooling"
   },
   "prettier": "@internal/prettier-config"
 }

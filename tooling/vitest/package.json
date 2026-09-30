@@ -30,13 +30,13 @@
   "devDependencies": {
     "@internal/prettier-config": "workspace:*",
     "@internal/tsconfig": "workspace:*",
-    "@pixpilot/dev-config": "catalog:dev",
-    "@testing-library/dom": "catalog:dev",
-    "@testing-library/react": "catalog:dev",
-    "@vitest/coverage-v8": "catalog:dev",
-    "eslint": "catalog:dev",
-    "jsdom": "catalog:dev",
-    "vitest": "catalog:dev"
+    "@pixpilot/dev-config": "catalog:pixpilot",
+    "@testing-library/dom": "catalog:testing",
+    "@testing-library/react": "catalog:testing",
+    "@vitest/coverage-v8": "catalog:testing",
+    "eslint": "catalog:tooling",
+    "jsdom": "catalog:testing",
+    "vitest": "catalog:testing"
   },
   "prettier": "@internal/prettier-config"
 }

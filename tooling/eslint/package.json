@@ -16,18 +16,18 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pixpilot/eslint-config": "catalog:dev",
-    "@pixpilot/eslint-config-next": "catalog:dev",
-    "@pixpilot/eslint-config-react": "catalog:dev",
-    "eslint-plugin-jest": "catalog:dev",
-    "eslint-plugin-turbo": "catalog:dev"
+    "@pixpilot/eslint-config": "catalog:pixpilot",
+    "@pixpilot/eslint-config-next": "catalog:pixpilot",
+    "@pixpilot/eslint-config-react": "catalog:pixpilot",
+    "eslint-plugin-jest": "catalog:tooling",
+    "eslint-plugin-turbo": "catalog:tooling"
   },
   "devDependencies": {
     "@internal/prettier-config": "workspace:*",
     "@internal/tsconfig": "workspace:*",
-    "eslint": "catalog:dev",
-    "prettier": "catalog:dev",
-    "typescript": "catalog:dev"
+    "eslint": "catalog:tooling",
+    "prettier": "catalog:tooling",
+    "typescript": "catalog:tooling"
   },
   "prettier": "@internal/prettier-config"
 }

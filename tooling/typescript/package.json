@@ -11,10 +11,10 @@
     "typecheck": "node validate-configs.mjs"
   },
   "devDependencies": {
-    "@pixpilot/dev-config": "catalog:dev",
-    "eslint": "catalog:dev",
-    "prettier": "catalog:dev",
-    "typescript": "catalog:dev"
+    "@pixpilot/dev-config": "catalog:pixpilot",
+    "eslint": "catalog:tooling",
+    "prettier": "catalog:tooling",
+    "typescript": "catalog:tooling"
   },
   "prettier": "@internal/prettier-config"
 }
