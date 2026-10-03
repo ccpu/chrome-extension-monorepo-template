@@ -3,32 +3,40 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.34.6",
-  "author": "",
   "license": "MIT",
-  "keywords": [],
-  "exports": "./src/index.ts",
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./app-config-public": {
+      "types": "./src/app-config-public.d.ts",
+      "default": "./src/app-config-public.js"
+    },
+    "./public-urls": {
+      "types": "./src/public-urls.d.ts",
+      "default": "./src/public-urls.js"
+    }
+  },
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "scripts": {
-    "clean:all": "git clean -xdf .cache .turbo dist node_modules",
-    "clean": "git clean -xdf .cache .turbo dist",
-    "test": "vitest --run --passWithNoTests",
-    "test:watch": "vitest --watch",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
-    "typecheck": "tsc --noEmit",
+    "clean": "git clean -xdf .cache .turbo",
+    "clean:all": "pnpm clean && git clean -xdf node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
     "lint": "eslint",
-    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest --run",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
     "@internal/eslint-config": "workspace:*",
     "@internal/prettier-config": "workspace:*",
     "@internal/tsconfig": "workspace:*",
     "@internal/vitest-config": "workspace:*",
-    "@types/node": "catalog:tooling",
     "eslint": "catalog:tooling",
+    "prettier": "catalog:tooling",
     "typescript": "catalog:tooling"
   },
   "prettier": "@internal/prettier-config"

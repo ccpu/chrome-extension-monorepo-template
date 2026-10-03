@@ -10,7 +10,7 @@ const ViewProvider: React.FC<ViewProviderProps> = (props) => {
 
   return (
     <React.StrictMode>
-      <ThemeProvider defaultTheme={appConfig.theme.defaultTheme}>
+      <ThemeProvider defaultTheme={appConfig.theme?.defaultTheme}>
         {children}
       </ThemeProvider>
     </React.StrictMode>

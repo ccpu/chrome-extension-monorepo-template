@@ -297,12 +297,12 @@ importers:
       '@internal/vitest-config':
         specifier: workspace:*
         version: link:../../tooling/vitest
-      '@types/node':
-        specifier: ^22.20.4
-        version: 22.20.4
       eslint:
         specifier: catalog:tooling
         version: 9.37.0(jiti@2.7.0)
+      prettier:
+        specifier: catalog:tooling
+        version: 3.9.9
       typescript:
         specifier: ^5.9.3
         version: 5.9.3

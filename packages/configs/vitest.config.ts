@@ -1,3 +1,3 @@
-import baseConfig from '@internal/vitest-config/lib';
+import config from '@internal/vitest-config/lib';
 
-export default baseConfig;
+export default config;
