@@ -47,7 +47,6 @@
     "@commitlint/config-conventional": "catalog:tooling",
     "@internal/prettier-config": "workspace:*",
     "@pixpilot/dev-config": "catalog:pixpilot",
-    "@pixpilot/workspace-package-generator": "catalog:pixpilot",
     "@testing-library/jest-dom": "catalog:testing",
     "@types/chrome": "catalog:chrome",
     "@vitest/coverage-v8": "catalog:testing",
