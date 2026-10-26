@@ -37,7 +37,7 @@
     {
       "id": "install-dependencies",
       "name": "Install dependencies",
-      "description": "Run last, after the gate is gone, so the removed postinstall guard is not re-triggered",
+      "description": "Run last, after setup-guard has removed scripts.setup, pnpm:devPreinstall and the commit guard, and setup/ has been deleted",
       "type": "exec",
       "config": {
         "command": "pnpm install"

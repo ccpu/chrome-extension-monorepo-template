@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Guards the one-time `pnpm setup` (scaffoldfy workspace-initializer).
+ * Guards the one-time `pnpm run setup` (scaffoldfy workspace-initializer).
  *
- *   node setup/guard.mjs warn   -> postinstall: prints a banner, never fails
- *   node setup/guard.mjs block  -> pre-commit: exits 1 until setup has run
+ *   node setup/guard.mjs warn   -> prints a banner, never fails
+ *   node setup/guard.mjs block  -> pnpm:devPreinstall / pre-commit: exits 1
  *
- * There is no "already done" marker: `pnpm setup` finishes by running
- * `setup/cleanup.mjs`, which strips both call sites and deletes this whole
- * folder. If the guard still exists, setup has not completed.
+ * There is no "already done" marker: `pnpm run setup` uses the shared
+ * setup-guard config to strip the call sites, then deletes this whole folder.
+ * If the guard still exists, setup has not completed.
  *
  * Bypass with SKIP_SETUP_CHECK=1.
  */

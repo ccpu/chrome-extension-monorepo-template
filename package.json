@@ -18,6 +18,7 @@
   },
   "scripts": {
     "setup": "npx @pixpilot/scaffoldfy --config ./setup/scaffoldfy.json",
+    "pnpm:devPreinstall": "node setup/guard.mjs block",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "tsc:watch": "pnpm exec tsc --noEmit --watch --project tsconfig.watch.json",
@@ -29,7 +30,7 @@
     "lint:root:fix": "pnpm lint:root --fix",
     "lint:ws": "pnpm dlx sherif@latest",
     "fix:all": "pnpm format:fix && pnpm lint:fix",
-    "postinstall": "pnpm lint:ws && node setup/guard.mjs warn",
+    "postinstall": "pnpm lint:ws",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "test:ui": "vitest --ui",
