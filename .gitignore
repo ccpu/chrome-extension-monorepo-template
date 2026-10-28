@@ -71,6 +71,7 @@ coverage/
 .pnp.*
 pnpm-debug.log*
 .pnpm-debug.log*
+.pnpm-store/
 
 # -----------------------------
 # Output of 'npm pack'
