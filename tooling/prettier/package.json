@@ -14,15 +14,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "prettier": "catalog:tooling",
-    "prettier-plugin-tailwindcss": "catalog:tooling"
+    "prettier": "catalog:format",
+    "prettier-plugin-tailwindcss": "catalog:format"
   },
   "devDependencies": {
     "@internal/tsconfig": "workspace:*",
-    "@pixpilot/dev-config": "catalog:pixpilot",
-    "@types/node": "catalog:tooling",
-    "eslint": "catalog:tooling",
-    "typescript": "catalog:tooling"
+    "@pixpilot/dev-config": "catalog:config",
+    "@types/node": "catalog:typescript",
+    "eslint": "catalog:lint",
+    "typescript": "catalog:typescript"
   },
   "prettier": "@internal/prettier-config"
 }

@@ -35,9 +35,9 @@
     "@internal/prettier-config": "workspace:*",
     "@internal/tsconfig": "workspace:*",
     "@internal/vitest-config": "workspace:*",
-    "eslint": "catalog:tooling",
-    "prettier": "catalog:tooling",
-    "typescript": "catalog:tooling"
+    "eslint": "catalog:lint",
+    "prettier": "catalog:format",
+    "typescript": "catalog:typescript"
   },
   "prettier": "@internal/prettier-config"
 }

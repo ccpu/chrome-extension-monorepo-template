@@ -31,9 +31,9 @@
     "@internal/tsconfig": "workspace:*",
     "@internal/vitest-config": "workspace:*",
     "@testing-library/jest-dom": "catalog:testing",
-    "eslint": "catalog:tooling",
-    "prettier": "catalog:tooling",
-    "typescript": "catalog:tooling"
+    "eslint": "catalog:lint",
+    "prettier": "catalog:format",
+    "typescript": "catalog:typescript"
   },
   "prettier": "@internal/prettier-config"
 }

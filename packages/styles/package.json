@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@internal/prettier-config": "workspace:*",
-    "prettier": "catalog:tooling"
+    "prettier": "catalog:format"
   },
   "prettier": "@internal/prettier-config"
 }
