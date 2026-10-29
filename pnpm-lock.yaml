@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   build:
+    '@pixpilot/vite-plugin-source-inspector':
+      specifier: ^0.3.1
+      version: 0.3.1
     '@vitejs/plugin-react':
       specifier: ^5.2.0
       version: 5.2.0
@@ -231,6 +234,9 @@ importers:
       '@internal/vitest-config':
         specifier: workspace:*
         version: link:../../tooling/vitest
+      '@pixpilot/vite-plugin-source-inspector':
+        specifier: catalog:build
+        version: 0.3.1(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.4)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.15)(yaml@2.9.1))
       '@tailwindcss/vite':
         specifier: catalog:styling
         version: 4.3.3(vite@7.3.6(@types/node@22.20.4)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.15)(yaml@2.9.1))
@@ -1279,6 +1285,12 @@ packages:
     peerDependenciesMeta:
       eslint-plugin-turbo:
         optional: true
+
+  '@pixpilot/vite-plugin-source-inspector@0.3.1':
+    resolution: {integrity: sha512-nj/1NZ2Sug+Bly+rpe2ROx+Iglr+TIRad3i6x43lqMZRFn4ethdC3qY3JeDMOPfAssEEckYjYDkRImHw8k+Ung==}
+    peerDependencies:
+      typescript: ^5.9.3
+      vite: ^7.3.6
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -5888,6 +5900,11 @@ snapshots:
       - typescript
       - vitest
       - vue-eslint-parser
+
+  '@pixpilot/vite-plugin-source-inspector@0.3.1(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.4)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.15)(yaml@2.9.1))':
+    dependencies:
+      typescript: 5.9.3
+      vite: 7.3.6(@types/node@22.20.4)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.15)(yaml@2.9.1)
 
   '@pkgjs/parseargs@0.11.0':
     optional: true

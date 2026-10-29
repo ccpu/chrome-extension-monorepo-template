@@ -38,6 +38,7 @@ catalogs:
 
   build:
     '@babel/core': ^7.29.7
+    '@pixpilot/vite-plugin-source-inspector': ^0.3.1
     '@vitejs/plugin-react': ^5.2.0
     gulp: ^5.0.1
     gulp-zip: ^6.1.0

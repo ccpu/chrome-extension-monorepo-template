@@ -1,5 +1,6 @@
 import type { Plugin } from 'vite';
 import { crx } from '@crxjs/vite-plugin';
+import { sourceInspectorPlugin } from '@pixpilot/vite-plugin-source-inspector';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
@@ -43,6 +44,17 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     themeInitScript(),
     tailwindcss(),
+    sourceInspectorPlugin({
+      include: ['src/ui'],
+      editor: 'code',
+      hotkey: ['alt', 'shift'],
+      toggleButton: {
+        position: {
+          top: 40,
+          right: 5,
+        },
+      },
+    }),
     crx({
       manifest: getManifest(mode === 'development'),
       contentScripts: {
