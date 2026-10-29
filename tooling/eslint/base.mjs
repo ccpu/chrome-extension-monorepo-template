@@ -4,6 +4,7 @@ import commonConfig from './common.mjs';
 
 const turboRecommendedConfig = turboPlugin?.configs?.recommended;
 
+/** @type {import('eslint').Linter.Config[]} */
 // eslint-disable-next-line antfu/no-top-level-await
 const baseConfig = await defineConfig(
   {
@@ -41,5 +42,4 @@ const baseConfig = await defineConfig(
 /**
  * All packages that leverage t3-env should use this rule
  */
-/** @type {Awaited<import('eslint').Linter.Config[]>} */
 export default baseConfig;
